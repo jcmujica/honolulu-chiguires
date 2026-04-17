@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TeamLogo from '../components/TeamLogo.astro';
-import StitchRule from '../components/StitchRule.astro';
+import BaseballDiamondBg from '../components/BaseballDiamondBg.astro';
+import MiniMarcador from '../components/MiniMarcador.astro';
 import '../styles/global.css';
 ---
 
@@ -16,7 +17,7 @@ import '../styles/global.css';
 	/>
 
 	<header
-		class="sticky top-0 z-50 border-b border-navy-700/35 bg-navy-950/85 backdrop-blur-md supports-[backdrop-filter]:bg-navy-950/70"
+		class="sticky top-0 z-50 border-b border-dashed border-navy-600/40 bg-navy-950/90 backdrop-blur-md supports-[backdrop-filter]:bg-navy-950/75"
 	>
 		<div
 			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 sm:px-8"
@@ -32,7 +33,7 @@ import '../styles/global.css';
 						>Honolulu Chigüires</span
 					>
 					<span class="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-reef-300/95 sm:text-xs"
-						>Club de béisbol</span
+						>Club de béisbol · liga del pantano</span
 					>
 				</span>
 			</a>
@@ -42,7 +43,7 @@ import '../styles/global.css';
 			>
 				<a
 					class="rounded-full px-4 py-2 text-xs font-semibold text-sand-200 transition-colors hover:bg-navy-800/80 hover:text-gold-300 sm:text-sm"
-					href="#historia">Historia</a
+					href="#historia">Banquillo</a
 				>
 				<a
 					class="rounded-full px-4 py-2 text-xs font-semibold text-sand-200 transition-colors hover:bg-navy-800/80 hover:text-gold-300 sm:text-sm"
@@ -50,14 +51,14 @@ import '../styles/global.css';
 				>
 				<a
 					class="rounded-full px-4 py-2 text-xs font-semibold text-sand-200 transition-colors hover:bg-navy-800/80 hover:text-gold-300 sm:text-sm"
-					href="#boletin">Boletín</a
+					href="#boletin">7.º inning</a
 				>
 			</nav>
 			<a
 				href="#boletin"
 				class="rounded-full bg-lava-500 px-5 py-2.5 text-sm font-semibold text-navy-950 shadow-soft outline-none ring-1 ring-lava-400/35 transition duration-300 hover:bg-lava-400 hover:brightness-[1.03] focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
 			>
-				Recibir novedades
+				Al bat: tu correo
 			</a>
 		</div>
 	</header>
@@ -66,6 +67,9 @@ import '../styles/global.css';
 		<section
 			class="relative overflow-hidden px-5 pb-[clamp(4rem,12vw,7rem)] pt-[clamp(3rem,8vw,5rem)] sm:px-8"
 		>
+			<BaseballDiamondBg
+				class="absolute -right-[10%] top-[8%] h-[min(90vw,520px)] w-[min(90vw,520px)] opacity-90 sm:right-0 sm:top-[5%]"
+			/>
 			<div
 				class="pointer-events-none absolute -right-32 top-0 h-[28rem] w-[28rem] rounded-full bg-lava-500/18 blur-[100px] sm:right-0"
 				aria-hidden="true"
@@ -86,55 +90,58 @@ import '../styles/global.css';
 							<span class="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-lava-400 opacity-40"></span>
 							<span class="relative inline-flex h-2 w-2 rounded-full bg-lava-400"></span>
 						</span>
-						Aloha desde el diamante
+						Juego en curso (en nuestra cabeza)
 					</p>
 
-					<StitchRule class="mb-8 max-w-md" />
+					<MiniMarcador class="mb-8 max-w-sm" />
 
 					<h1
 						class="font-display text-[clamp(2.35rem,4.8vw,3.85rem)] font-semibold leading-[1.05] tracking-tight text-sand-50 text-balance"
 					>
 						<span class="font-medium text-sand-100/95">Tranquilos como un capibara.</span>
 						<span class="mt-3 block text-lava-300">Con hambre de campeones.</span>
+						<span class="mt-4 block font-sans text-[1.05rem] font-semibold italic leading-snug text-gold-400/95 sm:text-lg">
+							(Sprint de la ardilla: en revisión de video.)
+						</span>
 					</h1>
 					<p
 						class="mt-8 max-w-xl text-[1.05rem] font-medium leading-[1.65] text-reef-200 sm:text-lg sm:leading-relaxed"
 					>
-						Los Honolulu Chigüires mezclan cielo de isla y arrecife con garra de dugout: azul marino y
-						dorado para el orgullo, naranja para el atardecer, turquesa para el Pacífico y una mascota
-						que no se complica por nada.
+						Los Honolulu Chigüires mezclan brisa de outfield y sal marina con discusión de señales en el
+						dugout. Robo de base: solo si el entrenador deja. Toque de bola: negociable. Mascota: siempre
+						en el roster.
 					</p>
 					<div class="mt-11 flex flex-wrap items-center gap-4">
 						<a
 							href="#calendario"
 							class="inline-flex min-h-12 items-center justify-center rounded-full bg-lava-500 px-8 py-3.5 text-[0.95rem] font-semibold text-navy-950 shadow-glow outline-none ring-1 ring-lava-400/30 transition duration-300 hover:bg-lava-400 focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
 						>
-							Ver el calendario
+							Ver calendario (spoiler: TBA)
 						</a>
 						<a
 							href="#historia"
 							class="inline-flex min-h-12 items-center justify-center rounded-full border border-reef-500/35 bg-navy-900/35 px-8 py-3.5 text-[0.95rem] font-semibold text-sand-100 outline-none transition duration-300 hover:border-lava-400/45 hover:bg-navy-800/55 focus-visible:ring-2 focus-visible:ring-reef-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
 						>
-							Conoce el ambiente
+							Leer el reglamento informal
 						</a>
 					</div>
 
 					<div
-						class="mt-16 flex flex-wrap items-end gap-x-10 gap-y-6 border-t border-navy-700/45 pt-12"
+						class="mt-16 flex flex-wrap items-end gap-x-10 gap-y-6 border-t border-dashed border-chalk-400/25 pt-12"
 					>
 						<div>
-							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Hogar</p>
+							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Home</p>
 							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">808 · Oʻahu</p>
 						</div>
-						<span class="hidden text-gold-500/50 sm:inline" aria-hidden="true">·</span>
+						<span class="hidden text-gold-500/50 sm:inline" aria-hidden="true">|</span>
 						<div>
-							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Espíritu</p>
-							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">Calma y clutch</p>
+							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Récord</p>
+							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">∞ buena vibra</p>
 						</div>
-						<span class="hidden text-gold-500/50 sm:inline" aria-hidden="true">·</span>
+						<span class="hidden text-gold-500/50 sm:inline" aria-hidden="true">|</span>
 						<div>
-							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Colores</p>
-							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">Marino y turquesa</p>
+							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Hot dogs</p>
+							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">Sí, por favor</p>
 						</div>
 					</div>
 				</div>
@@ -146,6 +153,11 @@ import '../styles/global.css';
 						<div
 							class="relative overflow-hidden rounded-[calc(2rem-1px)] bg-gradient-to-br from-navy-800/98 to-navy-950 px-5 pb-8 pt-7 sm:px-8 sm:pb-10 sm:pt-9"
 						>
+							<p
+								class="mb-4 text-center font-display text-[0.65rem] font-bold uppercase tracking-[0.35em] text-gold-400/80"
+							>
+								Programa del día
+							</p>
 							<div
 								class="pointer-events-none absolute -right-10 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-lava-500/12 blur-3xl"
 								aria-hidden="true"
@@ -160,15 +172,17 @@ import '../styles/global.css';
 									Chigüires de Honolulu
 								</p>
 								<p class="mx-auto mt-3 max-w-sm text-sm font-medium leading-relaxed text-reef-200/95">
-									Marca oficial: capibara en el plato, Diamond Head en el horizonte, hibiscos junto a
-									las líneas de foul.
+									Capibara en el plato, Diamond Head al fondo, hibiscos en foul. Si ves una pelota
+									perdida, no es nuestra (probablemente sí).
 								</p>
 								<div
 									class="mt-9 flex w-full flex-col gap-3.5 rounded-2xl border border-navy-600/35 bg-navy-950/55 p-5 text-left backdrop-blur-[2px]"
 								>
-									<div class="flex items-center justify-between gap-4 text-sm">
+									<div class="flex flex-col gap-1.5 text-sm sm:flex-row sm:items-center sm:justify-between sm:gap-4">
 										<span class="font-medium text-reef-300">Próxima serie en casa</span>
-										<span class="shrink-0 font-display font-semibold text-gold-400">Por definir</span>
+										<span class="font-display font-semibold text-gold-400 sm:max-w-[12rem] sm:text-right">
+											Calendario en modo “TBA”
+										</span>
 									</div>
 									<div class="h-px bg-gradient-to-r from-transparent via-navy-600/80 to-transparent" />
 									<div class="flex items-center justify-between gap-4 text-sm">
@@ -180,28 +194,37 @@ import '../styles/global.css';
 						</div>
 					</div>
 					<p class="mt-5 max-w-sm text-[0.8rem] font-medium leading-snug text-navy-400 sm:mx-auto sm:text-center lg:mx-0 lg:text-left">
-						Energía de ligas menores, aloha de Grandes Ligas · aún no somos filial oficial de la MLB
+						Energía de ligas menores, aloha de Grandes Ligas. MLB: aún no nos llama; nosotros tampoco
+						tenemos su número.
 					</p>
 				</div>
 			</div>
 		</section>
 
+		<div class="mx-auto max-w-6xl px-5 pb-10 sm:px-8">
+			<p
+				class="rounded-lg border border-dashed border-lava-500/30 bg-navy-900/50 px-4 py-3 text-center text-[0.85rem] font-medium leading-snug text-reef-200/95 sm:text-sm"
+			>
+				<strong class="text-gold-400/95">Norma local:</strong> si tropiezas corriendo bases, cuenta como slide
+				artístico. El árbitro eres tú.
+			</p>
+		</div>
+
 		<section
 			id="historia"
-			class="border-t border-navy-800/40 bg-gradient-to-b from-navy-900/65 to-navy-950 px-5 py-[clamp(4rem,10vw,6.5rem)] sm:px-8"
+			class="border-t border-dashed border-navy-700/50 bg-gradient-to-b from-navy-900/65 to-navy-950 px-5 py-[clamp(4rem,10vw,6.5rem)] sm:px-8"
 		>
 			<div class="mx-auto max-w-6xl">
 				<div class="grid gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-20">
 					<div class="reveal max-w-xl">
-						<p class="mb-3 font-display text-sm font-medium italic text-gold-400/90">Desde Oʻahu</p>
+						<p class="mb-3 font-display text-sm font-medium italic text-gold-400/90">Desde el banquillo</p>
 						<h2 class="font-display text-[clamp(1.85rem,3.5vw,2.75rem)] font-semibold leading-tight tracking-tight text-sand-50 text-balance">
-							Raíces hawaianas, <span class="text-lava-300">sabor a béisbol</span>
+							Raíces hawaianas, <span class="text-lava-300">reglas de béisbol (casi)</span>
 						</h2>
-						<StitchRule class="my-8 max-w-xs" />
-						<p class="text-lg font-medium leading-relaxed text-reef-200/95">
-							Jugamos con vientos alisios en la camiseta y gratitud en el dugout. Cada entrada es un
-							pequeño festival: percusión en las gradas, protector en la tercera fila y una mascota
-							que es, básicamente, el tío relajado de todos.
+						<p class="mt-8 text-lg font-medium leading-relaxed text-reef-200/95">
+							Viento en la camiseta, café en el termo, gritos en el bullpen que nadie entiende del todo.
+							Cada entrada es un mini festival: alguien trae sunscreen, otro trae playlist, la mascota
+							firma autógrafos con la paciencia de un rocoso.
 						</p>
 					</div>
 					<ul class="reveal reveal-delay-2 space-y-0 divide-y divide-navy-700/45 border-t border-b border-navy-700/35">
@@ -210,18 +233,16 @@ import '../styles/global.css';
 							<div>
 								<p class="font-semibold text-sand-50">Viernes de lei</p>
 								<p class="mt-2 text-sm font-medium leading-relaxed text-reef-300/95">
-									Turquesa de arrecife, naranja de atardecer y dorado: puntos extra por llevar
-									plumeria detrás de la oreja.
+									Colores del logo o te multamos en broma. Plumeria: bonus de carisma +2.
 								</p>
 							</div>
 						</li>
 						<li class="flex gap-5 py-7">
 							<span class="font-display text-2xl font-semibold tabular-nums text-gold-400/90">02</span>
 							<div>
-								<p class="font-semibold text-sand-50">Sal con el shaka</p>
+								<p class="font-semibold text-sand-50">Shaka &amp; fair play</p>
 								<p class="mt-2 text-sm font-medium leading-relaxed text-reef-300/95">
-									Animamos fuerte, celebramos con juego limpio y dejamos el campo más limpio que
-									como lo encontramos.
+									Animamos fuerte, festejamos limpio y recogemos lo que traemos (incluido el ego).
 								</p>
 							</div>
 						</li>
@@ -230,7 +251,7 @@ import '../styles/global.css';
 							<div>
 								<p class="font-semibold text-sand-50">Código capibara</p>
 								<p class="mt-2 text-sm font-medium leading-relaxed text-reef-300/95">
-									Hidrátate, comparte los snacks y no apures un buen turno al bate.
+									Hidratar, compartir snacks y no apurar el bate: el tiempo aquí va a ritmo de marea.
 								</p>
 							</div>
 						</li>
@@ -242,19 +263,20 @@ import '../styles/global.css';
 		<section id="calendario" class="px-5 py-[clamp(4rem,10vw,6.5rem)] sm:px-8">
 			<div class="mx-auto max-w-6xl">
 				<div
-					class="reveal flex flex-col gap-6 border-b border-navy-700/35 pb-10 sm:flex-row sm:items-end sm:justify-between"
+					class="reveal flex flex-col gap-6 border-b border-dashed border-navy-700/35 pb-10 sm:flex-row sm:items-end sm:justify-between"
 				>
 					<div class="max-w-xl">
-						<h2 class="font-display text-[clamp(1.85rem,3.5vw,2.65rem)] font-semibold tracking-tight text-sand-50 text-balance">
+						<p class="font-display text-sm font-medium italic text-gold-400/85">Pizarra de futuro</p>
+						<h2 class="mt-1 font-display text-[clamp(1.85rem,3.5vw,2.65rem)] font-semibold tracking-tight text-sand-50 text-balance">
 							Próximas fechas
 						</h2>
 						<p class="mt-4 text-base font-medium leading-relaxed text-reef-300/95">
-							Las fechas llegarán pronto: únete a la lista y entérate antes que nadie cuando salgan
-							entradas y noches temáticas.
+							El calendario todavía está calentando en el bullpen. Apúntate y te avisamos antes que el
+							rival (que es el calendario).
 						</p>
 					</div>
 					<span
-						class="inline-flex w-fit items-center rounded-full border border-gold-400/25 bg-navy-900/55 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gold-400"
+						class="inline-flex w-fit items-center rounded border border-gold-400/30 bg-navy-900/55 px-3 py-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gold-400"
 					>
 						Temporada 2026
 					</span>
@@ -262,35 +284,35 @@ import '../styles/global.css';
 
 				<div class="mt-12 grid gap-5 lg:grid-cols-12 lg:gap-6">
 					<article
-						class="reveal reveal-delay-1 group flex min-h-[200px] flex-col justify-between rounded-2xl border border-l-4 border-l-lava-500 border-navy-700/40 bg-navy-900/35 p-7 transition duration-300 hover:border-navy-600/50 hover:bg-navy-900/50 lg:col-span-7"
+						class="reveal reveal-delay-1 group flex min-h-[200px] flex-col justify-between rounded-2xl border border-navy-700/40 border-t-4 border-t-lava-500 bg-navy-900/35 p-7 transition duration-300 hover:-translate-y-0.5 hover:border-navy-600/50 hover:border-t-lava-400 hover:bg-navy-900/50 lg:col-span-7"
 					>
 						<div>
-							<p class="font-display text-4xl font-bold text-lava-400">—</p>
+							<p class="font-plate font-display text-4xl font-bold text-lava-400">TBA</p>
 							<h3 class="mt-4 font-display text-xl font-semibold text-sand-50">Inauguración en casa</h3>
-							<p class="mt-3 text-sm font-medium text-reef-400/95">Anuncios en camino</p>
+							<p class="mt-3 text-sm font-medium text-reef-400/95">El día que sepamos el día, lo sabrás.</p>
 						</div>
-						<p class="mt-6 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400">Serie destacada</p>
+						<p class="mt-6 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400">Serie A · hype</p>
 					</article>
 					<article
-						class="reveal reveal-delay-2 group flex min-h-[200px] flex-col justify-between rounded-2xl border border-l-4 border-l-gold-400 border-navy-700/40 bg-navy-900/35 p-7 transition duration-300 hover:border-navy-600/50 hover:bg-navy-900/50 lg:col-span-5"
+						class="reveal reveal-delay-2 group flex min-h-[200px] flex-col justify-between rounded-2xl border border-navy-700/40 border-t-4 border-t-gold-400 bg-navy-900/35 p-7 transition duration-300 hover:-translate-y-0.5 hover:border-navy-600/50 hover:border-t-gold-300 hover:bg-navy-900/50 lg:col-span-5"
 					>
 						<div>
-							<p class="font-display text-4xl font-bold text-lava-400">—</p>
-							<h3 class="mt-4 font-display text-xl font-semibold text-sand-50">Doble juego al atardecer</h3>
-							<p class="mt-3 text-sm font-medium text-reef-400/95">Camisetas naranjas opcionales</p>
+							<p class="font-plate font-display text-4xl font-bold text-lava-400">TBA</p>
+							<h3 class="mt-4 font-display text-xl font-semibold text-sand-50">Doble cartelera al atardecer</h3>
+							<p class="mt-3 text-sm font-medium text-reef-400/95">Naranja opcional, actitud obligatoria.</p>
 						</div>
-						<p class="mt-6 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400">Noche especial</p>
+						<p class="mt-6 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400">Noche larga</p>
 					</article>
 					<article
-						class="reveal reveal-delay-3 flex flex-col justify-between rounded-2xl border border-l-4 border-l-reef-500 border-navy-700/40 bg-gradient-to-r from-navy-900/50 to-navy-950/80 p-7 transition duration-300 hover:border-navy-600/50 lg:col-span-12 lg:flex-row lg:items-center lg:gap-10"
+						class="reveal reveal-delay-3 flex flex-col justify-between rounded-2xl border border-navy-700/40 border-t-4 border-t-reef-500 bg-gradient-to-r from-navy-900/50 to-navy-950/80 p-7 transition duration-300 hover:-translate-y-0.5 hover:border-navy-600/50 hover:border-t-reef-400 lg:col-span-12 lg:flex-row lg:items-center lg:gap-10"
 					>
 						<div>
-							<p class="font-display text-4xl font-bold text-lava-400">—</p>
+							<p class="font-plate font-display text-4xl font-bold text-lava-400">TBA</p>
 							<h3 class="mt-2 font-display text-xl font-semibold text-sand-50 lg:mt-1">Niños corren las bases</h3>
-							<p class="mt-2 text-sm font-medium text-reef-400/95 lg:mt-1">Trae a todo el pantano</p>
+							<p class="mt-2 text-sm font-medium text-reef-400/95 lg:mt-1">Padres: filmen horizontal, por favor al universo.</p>
 						</div>
 						<p class="mt-6 shrink-0 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400 lg:mt-0">
-							Familias · domingos
+							Domingo · familia
 						</p>
 					</article>
 				</div>
@@ -299,17 +321,17 @@ import '../styles/global.css';
 
 		<section
 			id="boletin"
-			class="mx-5 mb-[clamp(3rem,8vw,5rem)] overflow-hidden rounded-[2rem] border border-lava-500/20 bg-gradient-to-br from-navy-800/95 via-navy-900 to-navy-950 px-6 py-[clamp(3rem,8vw,4.5rem)] shadow-soft ring-1 ring-gold-400/10 sm:mx-8 sm:px-12"
+			class="mx-5 mb-[clamp(3rem,8vw,5rem)] overflow-hidden rounded-[2rem] border border-lava-500/25 bg-gradient-to-br from-navy-800/95 via-navy-900 to-navy-950 px-6 py-[clamp(3rem,8vw,4.5rem)] shadow-soft ring-1 ring-gold-400/10 sm:mx-8 sm:px-12"
 		>
 			<div class="reveal mx-auto max-w-2xl">
 				<div class="text-center sm:text-left">
-					<p class="font-display text-sm font-medium italic text-gold-400/85">Lista de correo</p>
+					<p class="font-display text-sm font-medium italic text-gold-400/85">7.º inning stretch (digital)</p>
 					<h2 class="mt-2 font-display text-[clamp(1.85rem,3.2vw,2.5rem)] font-semibold tracking-tight text-sand-50 text-balance">
 						Únete al pantano
 					</h2>
 					<p class="mt-5 text-base font-medium leading-relaxed text-reef-200/95">
-						Recibe fechas de calendario, adelantos de merch y el dato capibara de vez en cuando. Sin spam:
-						solo aloha.
+						Recibe fechas, rumores de merch y datos capibara inútiles pero entrañables. Sin spam: solo
+						aloha y, a veces, un “¿ya es viernes?”.
 					</p>
 				</div>
 				<form
@@ -330,17 +352,17 @@ import '../styles/global.css';
 						type="submit"
 						class="min-h-12 shrink-0 rounded-xl bg-lava-500 px-8 text-sm font-semibold text-navy-950 outline-none transition duration-300 hover:bg-lava-400 focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
 					>
-						Avísame
+						Mandar al bullpen (tu inbox)
 					</button>
 				</form>
 				<p class="mt-5 text-center text-[0.8rem] font-medium text-navy-400/95 sm:text-left">
-					Formulario de demostración: conéctalo a tu herramienta de boletín cuando estés listo.
+					Demo: cuando conectes tu boletín real, borramos esta letra chiquita y fingimos seriedad.
 				</p>
 			</div>
 		</section>
 	</main>
 
-	<footer class="border-t border-navy-800/45 bg-navy-950 px-5 py-14 sm:px-8">
+	<footer class="border-t border-dashed border-navy-700/50 bg-navy-950 px-5 py-14 sm:px-8">
 		<div class="mx-auto flex max-w-6xl flex-col gap-12 sm:flex-row sm:items-center sm:justify-between">
 			<div class="flex items-center gap-5">
 				<span
@@ -350,11 +372,11 @@ import '../styles/global.css';
 				</span>
 				<div>
 					<p class="font-display text-lg font-semibold text-sand-50">Honolulu Chigüires</p>
-					<p class="mt-1 text-sm font-medium text-reef-400/95">Club de béisbol · Oʻahu · Orgullo capibara</p>
+					<p class="mt-1 text-sm font-medium text-reef-400/95">Club de béisbol · Oʻahu · Cero errores en el chat</p>
 				</div>
 			</div>
 			<p class="text-sm font-medium text-navy-400/95 sm:max-w-xs sm:text-right">
-				Hecho con aloha · Mahalo por la visita
+				Hecho con aloha · Si leíste hasta aquí, ya eres parte del lineup
 			</p>
 		</div>
 	</footer>

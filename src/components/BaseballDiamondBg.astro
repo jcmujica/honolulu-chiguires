@@ -1,0 +1,31 @@
+---
+// Silueta de diamante — fondo de campo, muy sutil
+interface Props {
+	class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<div class:list={['pointer-events-none text-reef-500/25', className]} aria-hidden="true">
+	<svg class="h-full w-full" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" fill="none">
+		<!-- Diamante + bases -->
+		<path
+			d="M100 12 L176 100 L100 188 L24 100 Z"
+			stroke="currentColor"
+			stroke-width="1.2"
+			opacity="0.9"
+		/>
+		<circle cx="100" cy="100" r="6" fill="currentColor" opacity="0.35" />
+		<rect x="96" y="28" width="8" height="8" fill="currentColor" opacity="0.25" transform="rotate(45 100 32)" />
+		<rect x="152" y="96" width="8" height="8" fill="currentColor" opacity="0.25" transform="rotate(45 156 100)" />
+		<rect x="40" y="96" width="8" height="8" fill="currentColor" opacity="0.25" transform="rotate(45 44 100)" />
+		<!-- Arco de infield -->
+		<path
+			d="M40 140 Q100 168 160 140"
+			stroke="currentColor"
+			stroke-width="0.8"
+			opacity="0.4"
+			stroke-dasharray="4 6"
+		/>
+	</svg>
+</div>

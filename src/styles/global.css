@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 
-/* Honolulu Chigüires — night-game program: navy base, reef + lava + gold accents */
+/* Honolulu Chigüires — noche de juego: marino, arrecife, lava, oro */
 @theme {
-	--font-display: 'Fraunces', 'Georgia', serif;
-	--font-sans: 'Manrope', system-ui, sans-serif;
+	--font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+	--font-sans: 'Lexend', system-ui, sans-serif;
 
 	--color-navy-950: oklch(0.2 0.055 258);
 	--color-navy-900: oklch(0.24 0.06 256);
@@ -35,6 +35,9 @@
 	--color-sand-100: oklch(0.97 0.02 92);
 	--color-sand-200: oklch(0.92 0.03 88);
 
+	/* Línea de tiza — bordes “de campo” */
+	--color-chalk-400: oklch(0.88 0.025 248);
+
 	--shadow-soft: 0 28px 56px -16px oklch(0.18 0.07 258 / 0.55);
 	--shadow-glow: 0 0 0 1px oklch(0.67 0.2 48 / 0.28),
 		0 24px 48px -20px oklch(0.55 0.19 45 / 0.42);
@@ -49,6 +52,7 @@
 	}
 	body {
 		@apply bg-navy-950 text-sand-100 font-sans antialiased;
+		line-height: 1.62;
 		text-rendering: optimizeLegibility;
 	}
 	::selection {
@@ -57,7 +61,12 @@
 	}
 }
 
-/* One-time section entrance: transform + opacity only */
+/* Números de tablero sin monospace genérico */
+.font-plate {
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.04em;
+}
+
 @media (prefers-reduced-motion: no-preference) {
 	.reveal {
 		animation: reveal-in 0.85s var(--ease-out-expo) both;
@@ -99,7 +108,6 @@
 	}
 }
 
-/* Subtle film grain — breaks flat fills without “glass everywhere” */
 .grain {
 	position: relative;
 }
