@@ -1,0 +1,10 @@
+{
+  // Workers + static assets (matches `astro build` output). Deploy: pnpm run deploy:cf
+  "name": "honolulu-chiguires",
+  "compatibility_date": "2026-04-17",
+  "assets": {
+    "directory": "./dist"
+    // Optional: after adding `src/pages/404.astro`, set:
+    // "not_found_handling": "404-page"
+  }
+}

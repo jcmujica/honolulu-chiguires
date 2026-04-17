@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+/* Honolulu Chigüires — night-game program: navy base, reef + lava + gold accents */
+@theme {
+	--font-display: 'Fraunces', 'Georgia', serif;
+	--font-sans: 'Manrope', system-ui, sans-serif;
+
+	--color-navy-950: oklch(0.2 0.055 258);
+	--color-navy-900: oklch(0.24 0.06 256);
+	--color-navy-800: oklch(0.29 0.065 255);
+	--color-navy-700: oklch(0.36 0.07 252);
+	--color-navy-600: oklch(0.42 0.065 250);
+	--color-navy-500: oklch(0.48 0.055 248);
+	--color-navy-400: oklch(0.58 0.045 245);
+	--color-navy-300: oklch(0.72 0.03 245);
+
+	--color-reef-700: oklch(0.4 0.1 195);
+	--color-reef-600: oklch(0.46 0.11 193);
+	--color-reef-500: oklch(0.52 0.11 191);
+	--color-reef-400: oklch(0.62 0.1 189);
+	--color-reef-300: oklch(0.76 0.08 188);
+	--color-reef-200: oklch(0.88 0.05 185);
+	--color-reef-100: oklch(0.94 0.03 185);
+
+	--color-lava-600: oklch(0.58 0.2 45);
+	--color-lava-500: oklch(0.67 0.2 48);
+	--color-lava-400: oklch(0.72 0.18 52);
+	--color-lava-300: oklch(0.82 0.14 58);
+
+	--color-gold-500: oklch(0.86 0.16 92);
+	--color-gold-400: oklch(0.9 0.15 95);
+	--color-gold-300: oklch(0.94 0.1 98);
+
+	--color-sand-50: oklch(0.985 0.012 95);
+	--color-sand-100: oklch(0.97 0.02 92);
+	--color-sand-200: oklch(0.92 0.03 88);
+
+	--shadow-soft: 0 28px 56px -16px oklch(0.18 0.07 258 / 0.55);
+	--shadow-glow: 0 0 0 1px oklch(0.67 0.2 48 / 0.28),
+		0 24px 48px -20px oklch(0.55 0.19 45 / 0.42);
+
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		@apply bg-navy-950 text-sand-100 font-sans antialiased;
+		text-rendering: optimizeLegibility;
+	}
+	::selection {
+		background: color-mix(in oklch, var(--color-lava-500) 35%, transparent);
+		color: var(--color-navy-950);
+	}
+}
+
+/* One-time section entrance: transform + opacity only */
+@media (prefers-reduced-motion: no-preference) {
+	.reveal {
+		animation: reveal-in 0.85s var(--ease-out-expo) both;
+	}
+	.reveal-delay-1 {
+		animation-delay: 80ms;
+	}
+	.reveal-delay-2 {
+		animation-delay: 160ms;
+	}
+	.reveal-delay-3 {
+		animation-delay: 240ms;
+	}
+	.reveal-delay-4 {
+		animation-delay: 320ms;
+	}
+}
+
+@keyframes reveal-in {
+	from {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal,
+	.reveal-delay-1,
+	.reveal-delay-2,
+	.reveal-delay-3,
+	.reveal-delay-4 {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* Subtle film grain — breaks flat fills without “glass everywhere” */
+.grain {
+	position: relative;
+}
+.grain::after {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	inset: 0;
+	opacity: 0.04;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	mix-blend-mode: overlay;
+}

@@ -1,0 +1,24 @@
+---
+interface Props {
+	class?: string;
+	alt?: string;
+	priority?: boolean;
+}
+
+const {
+	class: className,
+	alt = 'Honolulu Chigüires Baseball Club: mascota capibara con bate, atardecer hawaiano y Diamond Head',
+	priority = false,
+} = Astro.props;
+---
+
+<img
+	src="/logo.png"
+	alt={alt}
+	width="1024"
+	height="1024"
+	decoding="async"
+	loading={priority ? 'eager' : 'lazy'}
+	fetchpriority={priority ? 'high' : 'auto'}
+	class:list={['h-auto w-full max-w-full object-contain', className]}
+/>

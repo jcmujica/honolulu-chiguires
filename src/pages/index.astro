@@ -1,11 +1,361 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import TeamLogo from '../components/TeamLogo.astro';
+import StitchRule from '../components/StitchRule.astro';
+import '../styles/global.css';
 ---
 
 <Layout>
-	<Welcome />
+	<div
+		class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_90%_70%_at_15%_0%,oklch(0.42_0.11_193/0.22),transparent_55%),radial-gradient(ellipse_80%_60%_at_90%_20%,oklch(0.58_0.18_48/0.12),transparent_50%)]"
+		aria-hidden="true"
+	/>
+	<div
+		class="pointer-events-none fixed inset-0 -z-10 opacity-[0.055] [background-image:repeating-linear-gradient(108deg,oklch(0.42_0.06_250)_0,oklch(0.42_0.06_250)_1px,transparent_1px,transparent_14px)]"
+		aria-hidden="true"
+	/>
+
+	<header
+		class="sticky top-0 z-50 border-b border-navy-700/35 bg-navy-950/85 backdrop-blur-md supports-[backdrop-filter]:bg-navy-950/70"
+	>
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 sm:px-8"
+		>
+			<a href="/" class="group flex items-center gap-3.5 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-gold-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
+				<span
+					class="relative flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center overflow-hidden rounded-full bg-navy-800 shadow-soft ring-2 ring-gold-400/30 transition duration-300 group-hover:ring-gold-400/55"
+				>
+					<TeamLogo class="h-[3.25rem] w-[3.25rem] scale-[1.08]" />
+				</span>
+				<span class="text-left leading-[1.15]">
+					<span class="block font-display text-lg font-semibold tracking-tight text-sand-50 sm:text-[1.35rem]"
+						>Honolulu Chigüires</span
+					>
+					<span class="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-reef-300/95 sm:text-xs"
+						>Club de béisbol</span
+					>
+				</span>
+			</a>
+			<nav
+				class="order-last flex w-full basis-full items-center justify-center gap-1 rounded-full border border-navy-600/40 bg-navy-900/50 p-1 sm:order-none sm:w-auto sm:basis-auto sm:justify-self-center md:flex-1 md:justify-center"
+				aria-label="Secciones principales"
+			>
+				<a
+					class="rounded-full px-4 py-2 text-xs font-semibold text-sand-200 transition-colors hover:bg-navy-800/80 hover:text-gold-300 sm:text-sm"
+					href="#historia">Historia</a
+				>
+				<a
+					class="rounded-full px-4 py-2 text-xs font-semibold text-sand-200 transition-colors hover:bg-navy-800/80 hover:text-gold-300 sm:text-sm"
+					href="#calendario">Calendario</a
+				>
+				<a
+					class="rounded-full px-4 py-2 text-xs font-semibold text-sand-200 transition-colors hover:bg-navy-800/80 hover:text-gold-300 sm:text-sm"
+					href="#boletin">Boletín</a
+				>
+			</nav>
+			<a
+				href="#boletin"
+				class="rounded-full bg-lava-500 px-5 py-2.5 text-sm font-semibold text-navy-950 shadow-soft outline-none ring-1 ring-lava-400/35 transition duration-300 hover:bg-lava-400 hover:brightness-[1.03] focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+			>
+				Recibir novedades
+			</a>
+		</div>
+	</header>
+
+	<main id="contenido" class="grain relative bg-navy-950 text-sand-100">
+		<section
+			class="relative overflow-hidden px-5 pb-[clamp(4rem,12vw,7rem)] pt-[clamp(3rem,8vw,5rem)] sm:px-8"
+		>
+			<div
+				class="pointer-events-none absolute -right-32 top-0 h-[28rem] w-[28rem] rounded-full bg-lava-500/18 blur-[100px] sm:right-0"
+				aria-hidden="true"
+			/>
+			<div
+				class="pointer-events-none absolute -left-24 bottom-0 h-[26rem] w-[26rem] rounded-full bg-reef-600/16 blur-[100px]"
+				aria-hidden="true"
+			/>
+
+			<div
+				class="relative mx-auto grid max-w-6xl gap-14 lg:grid-cols-[minmax(0,1.08fr)_minmax(260px,0.92fr)] lg:items-start lg:gap-x-[clamp(2rem,5vw,4rem)]"
+			>
+				<div class="reveal max-w-[40rem] pt-2 lg:pt-6">
+					<p
+						class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-gold-400/25 bg-navy-900/55 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-gold-400 sm:text-xs"
+					>
+						<span class="relative flex h-2 w-2">
+							<span class="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-lava-400 opacity-40"></span>
+							<span class="relative inline-flex h-2 w-2 rounded-full bg-lava-400"></span>
+						</span>
+						Aloha desde el diamante
+					</p>
+
+					<StitchRule class="mb-8 max-w-md" />
+
+					<h1
+						class="font-display text-[clamp(2.35rem,4.8vw,3.85rem)] font-semibold leading-[1.05] tracking-tight text-sand-50 text-balance"
+					>
+						<span class="font-medium text-sand-100/95">Tranquilos como un capibara.</span>
+						<span class="mt-3 block text-lava-300">Con hambre de campeones.</span>
+					</h1>
+					<p
+						class="mt-8 max-w-xl text-[1.05rem] font-medium leading-[1.65] text-reef-200 sm:text-lg sm:leading-relaxed"
+					>
+						Los Honolulu Chigüires mezclan cielo de isla y arrecife con garra de dugout: azul marino y
+						dorado para el orgullo, naranja para el atardecer, turquesa para el Pacífico y una mascota
+						que no se complica por nada.
+					</p>
+					<div class="mt-11 flex flex-wrap items-center gap-4">
+						<a
+							href="#calendario"
+							class="inline-flex min-h-12 items-center justify-center rounded-full bg-lava-500 px-8 py-3.5 text-[0.95rem] font-semibold text-navy-950 shadow-glow outline-none ring-1 ring-lava-400/30 transition duration-300 hover:bg-lava-400 focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+						>
+							Ver el calendario
+						</a>
+						<a
+							href="#historia"
+							class="inline-flex min-h-12 items-center justify-center rounded-full border border-reef-500/35 bg-navy-900/35 px-8 py-3.5 text-[0.95rem] font-semibold text-sand-100 outline-none transition duration-300 hover:border-lava-400/45 hover:bg-navy-800/55 focus-visible:ring-2 focus-visible:ring-reef-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+						>
+							Conoce el ambiente
+						</a>
+					</div>
+
+					<div
+						class="mt-16 flex flex-wrap items-end gap-x-10 gap-y-6 border-t border-navy-700/45 pt-12"
+					>
+						<div>
+							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Hogar</p>
+							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">808 · Oʻahu</p>
+						</div>
+						<span class="hidden text-gold-500/50 sm:inline" aria-hidden="true">·</span>
+						<div>
+							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Espíritu</p>
+							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">Calma y clutch</p>
+						</div>
+						<span class="hidden text-gold-500/50 sm:inline" aria-hidden="true">·</span>
+						<div>
+							<p class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-reef-400/90">Colores</p>
+							<p class="mt-1.5 font-display text-xl font-semibold tracking-tight text-sand-50">Marino y turquesa</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="reveal reveal-delay-2 relative lg:mt-4 lg:justify-self-end">
+					<div
+						class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-gold-400/[0.12] via-navy-800/90 to-navy-950 p-[1px] shadow-soft ring-1 ring-navy-600/30"
+					>
+						<div
+							class="relative overflow-hidden rounded-[calc(2rem-1px)] bg-gradient-to-br from-navy-800/98 to-navy-950 px-5 pb-8 pt-7 sm:px-8 sm:pb-10 sm:pt-9"
+						>
+							<div
+								class="pointer-events-none absolute -right-10 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-lava-500/12 blur-3xl"
+								aria-hidden="true"
+							/>
+							<div class="relative flex flex-col items-stretch sm:items-center sm:text-center">
+								<div
+									class="relative mx-auto mb-6 w-full max-w-[300px] drop-shadow-[0_24px_48px_oklch(0.15_0.08_258/0.55)] sm:max-w-[320px]"
+								>
+									<TeamLogo class="max-h-[min(52vw,320px)]" priority={true} />
+								</div>
+								<p class="font-display text-[1.65rem] font-semibold tracking-tight text-sand-50">
+									Chigüires de Honolulu
+								</p>
+								<p class="mx-auto mt-3 max-w-sm text-sm font-medium leading-relaxed text-reef-200/95">
+									Marca oficial: capibara en el plato, Diamond Head en el horizonte, hibiscos junto a
+									las líneas de foul.
+								</p>
+								<div
+									class="mt-9 flex w-full flex-col gap-3.5 rounded-2xl border border-navy-600/35 bg-navy-950/55 p-5 text-left backdrop-blur-[2px]"
+								>
+									<div class="flex items-center justify-between gap-4 text-sm">
+										<span class="font-medium text-reef-300">Próxima serie en casa</span>
+										<span class="shrink-0 font-display font-semibold text-gold-400">Por definir</span>
+									</div>
+									<div class="h-px bg-gradient-to-r from-transparent via-navy-600/80 to-transparent" />
+									<div class="flex items-center justify-between gap-4 text-sm">
+										<span class="font-medium text-reef-300">Zona de aficionados</span>
+										<span class="shrink-0 font-semibold tracking-wide text-sand-100">The Marsh</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p class="mt-5 max-w-sm text-[0.8rem] font-medium leading-snug text-navy-400 sm:mx-auto sm:text-center lg:mx-0 lg:text-left">
+						Energía de ligas menores, aloha de Grandes Ligas · aún no somos filial oficial de la MLB
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section
+			id="historia"
+			class="border-t border-navy-800/40 bg-gradient-to-b from-navy-900/65 to-navy-950 px-5 py-[clamp(4rem,10vw,6.5rem)] sm:px-8"
+		>
+			<div class="mx-auto max-w-6xl">
+				<div class="grid gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-20">
+					<div class="reveal max-w-xl">
+						<p class="mb-3 font-display text-sm font-medium italic text-gold-400/90">Desde Oʻahu</p>
+						<h2 class="font-display text-[clamp(1.85rem,3.5vw,2.75rem)] font-semibold leading-tight tracking-tight text-sand-50 text-balance">
+							Raíces hawaianas, <span class="text-lava-300">sabor a béisbol</span>
+						</h2>
+						<StitchRule class="my-8 max-w-xs" />
+						<p class="text-lg font-medium leading-relaxed text-reef-200/95">
+							Jugamos con vientos alisios en la camiseta y gratitud en el dugout. Cada entrada es un
+							pequeño festival: percusión en las gradas, protector en la tercera fila y una mascota
+							que es, básicamente, el tío relajado de todos.
+						</p>
+					</div>
+					<ul class="reveal reveal-delay-2 space-y-0 divide-y divide-navy-700/45 border-t border-b border-navy-700/35">
+						<li class="flex gap-5 py-7 first:pt-0 last:pb-0">
+							<span class="font-display text-2xl font-semibold tabular-nums text-gold-400/90">01</span>
+							<div>
+								<p class="font-semibold text-sand-50">Viernes de lei</p>
+								<p class="mt-2 text-sm font-medium leading-relaxed text-reef-300/95">
+									Turquesa de arrecife, naranja de atardecer y dorado: puntos extra por llevar
+									plumeria detrás de la oreja.
+								</p>
+							</div>
+						</li>
+						<li class="flex gap-5 py-7">
+							<span class="font-display text-2xl font-semibold tabular-nums text-gold-400/90">02</span>
+							<div>
+								<p class="font-semibold text-sand-50">Sal con el shaka</p>
+								<p class="mt-2 text-sm font-medium leading-relaxed text-reef-300/95">
+									Animamos fuerte, celebramos con juego limpio y dejamos el campo más limpio que
+									como lo encontramos.
+								</p>
+							</div>
+						</li>
+						<li class="flex gap-5 py-7">
+							<span class="font-display text-2xl font-semibold tabular-nums text-gold-400/90">03</span>
+							<div>
+								<p class="font-semibold text-sand-50">Código capibara</p>
+								<p class="mt-2 text-sm font-medium leading-relaxed text-reef-300/95">
+									Hidrátate, comparte los snacks y no apures un buen turno al bate.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="calendario" class="px-5 py-[clamp(4rem,10vw,6.5rem)] sm:px-8">
+			<div class="mx-auto max-w-6xl">
+				<div
+					class="reveal flex flex-col gap-6 border-b border-navy-700/35 pb-10 sm:flex-row sm:items-end sm:justify-between"
+				>
+					<div class="max-w-xl">
+						<h2 class="font-display text-[clamp(1.85rem,3.5vw,2.65rem)] font-semibold tracking-tight text-sand-50 text-balance">
+							Próximas fechas
+						</h2>
+						<p class="mt-4 text-base font-medium leading-relaxed text-reef-300/95">
+							Las fechas llegarán pronto: únete a la lista y entérate antes que nadie cuando salgan
+							entradas y noches temáticas.
+						</p>
+					</div>
+					<span
+						class="inline-flex w-fit items-center rounded-full border border-gold-400/25 bg-navy-900/55 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gold-400"
+					>
+						Temporada 2026
+					</span>
+				</div>
+
+				<div class="mt-12 grid gap-5 lg:grid-cols-12 lg:gap-6">
+					<article
+						class="reveal reveal-delay-1 group flex min-h-[200px] flex-col justify-between rounded-2xl border border-l-4 border-l-lava-500 border-navy-700/40 bg-navy-900/35 p-7 transition duration-300 hover:border-navy-600/50 hover:bg-navy-900/50 lg:col-span-7"
+					>
+						<div>
+							<p class="font-display text-4xl font-bold text-lava-400">—</p>
+							<h3 class="mt-4 font-display text-xl font-semibold text-sand-50">Inauguración en casa</h3>
+							<p class="mt-3 text-sm font-medium text-reef-400/95">Anuncios en camino</p>
+						</div>
+						<p class="mt-6 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400">Serie destacada</p>
+					</article>
+					<article
+						class="reveal reveal-delay-2 group flex min-h-[200px] flex-col justify-between rounded-2xl border border-l-4 border-l-gold-400 border-navy-700/40 bg-navy-900/35 p-7 transition duration-300 hover:border-navy-600/50 hover:bg-navy-900/50 lg:col-span-5"
+					>
+						<div>
+							<p class="font-display text-4xl font-bold text-lava-400">—</p>
+							<h3 class="mt-4 font-display text-xl font-semibold text-sand-50">Doble juego al atardecer</h3>
+							<p class="mt-3 text-sm font-medium text-reef-400/95">Camisetas naranjas opcionales</p>
+						</div>
+						<p class="mt-6 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400">Noche especial</p>
+					</article>
+					<article
+						class="reveal reveal-delay-3 flex flex-col justify-between rounded-2xl border border-l-4 border-l-reef-500 border-navy-700/40 bg-gradient-to-r from-navy-900/50 to-navy-950/80 p-7 transition duration-300 hover:border-navy-600/50 lg:col-span-12 lg:flex-row lg:items-center lg:gap-10"
+					>
+						<div>
+							<p class="font-display text-4xl font-bold text-lava-400">—</p>
+							<h3 class="mt-2 font-display text-xl font-semibold text-sand-50 lg:mt-1">Niños corren las bases</h3>
+							<p class="mt-2 text-sm font-medium text-reef-400/95 lg:mt-1">Trae a todo el pantano</p>
+						</div>
+						<p class="mt-6 shrink-0 text-[0.7rem] font-semibold uppercase tracking-widest text-navy-400 lg:mt-0">
+							Familias · domingos
+						</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section
+			id="boletin"
+			class="mx-5 mb-[clamp(3rem,8vw,5rem)] overflow-hidden rounded-[2rem] border border-lava-500/20 bg-gradient-to-br from-navy-800/95 via-navy-900 to-navy-950 px-6 py-[clamp(3rem,8vw,4.5rem)] shadow-soft ring-1 ring-gold-400/10 sm:mx-8 sm:px-12"
+		>
+			<div class="reveal mx-auto max-w-2xl">
+				<div class="text-center sm:text-left">
+					<p class="font-display text-sm font-medium italic text-gold-400/85">Lista de correo</p>
+					<h2 class="mt-2 font-display text-[clamp(1.85rem,3.2vw,2.5rem)] font-semibold tracking-tight text-sand-50 text-balance">
+						Únete al pantano
+					</h2>
+					<p class="mt-5 text-base font-medium leading-relaxed text-reef-200/95">
+						Recibe fechas de calendario, adelantos de merch y el dato capibara de vez en cuando. Sin spam:
+						solo aloha.
+					</p>
+				</div>
+				<form
+					class="mt-10 flex max-w-xl flex-col gap-3 sm:mx-auto sm:flex-row sm:items-stretch lg:mx-0"
+					action="#"
+					method="post"
+				>
+					<label class="sr-only" for="email">Correo electrónico</label>
+					<input
+						id="email"
+						name="email"
+						type="email"
+						autocomplete="email"
+						placeholder="tu@correo.com"
+						class="min-h-12 flex-1 rounded-xl border border-navy-600/55 bg-navy-950/45 px-4 text-sand-50 placeholder:text-navy-400/90 outline-none ring-0 transition duration-300 focus:border-lava-400/80 focus:ring-2 focus:ring-lava-500/35"
+					/>
+					<button
+						type="submit"
+						class="min-h-12 shrink-0 rounded-xl bg-lava-500 px-8 text-sm font-semibold text-navy-950 outline-none transition duration-300 hover:bg-lava-400 focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
+					>
+						Avísame
+					</button>
+				</form>
+				<p class="mt-5 text-center text-[0.8rem] font-medium text-navy-400/95 sm:text-left">
+					Formulario de demostración: conéctalo a tu herramienta de boletín cuando estés listo.
+				</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="border-t border-navy-800/45 bg-navy-950 px-5 py-14 sm:px-8">
+		<div class="mx-auto flex max-w-6xl flex-col gap-12 sm:flex-row sm:items-center sm:justify-between">
+			<div class="flex items-center gap-5">
+				<span
+					class="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-navy-800 shadow-soft ring-2 ring-gold-400/20"
+				>
+					<TeamLogo class="h-16 w-16 scale-[1.06]" />
+				</span>
+				<div>
+					<p class="font-display text-lg font-semibold text-sand-50">Honolulu Chigüires</p>
+					<p class="mt-1 text-sm font-medium text-reef-400/95">Club de béisbol · Oʻahu · Orgullo capibara</p>
+				</div>
+			</div>
+			<p class="text-sm font-medium text-navy-400/95 sm:max-w-xs sm:text-right">
+				Hecho con aloha · Mahalo por la visita
+			</p>
+		</div>
+	</footer>
 </Layout>

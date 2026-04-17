@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Cloudflare Wrangler
+.wrangler/
+
+# local secrets for `wrangler dev` (see Cloudflare docs)
+.dev.vars
